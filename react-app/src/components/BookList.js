@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import AppNavbar from "./Navbar";
+import Navbar from "./navbar";
 import { Link } from "react-router-dom";
 import { Button, ButtonGroup, Container, Table } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 
 class BookList extends Component {
   constructor(props) {
@@ -76,7 +75,6 @@ class BookList extends Component {
 
     return (
       <div>
-        <AppNavbar />
         <Container fluid>
           <div className="float-right">
             <Button
@@ -85,15 +83,15 @@ class BookList extends Component {
               tag={Link}
               to="/books/new"
             >
-              Add inventory
+              Add product
             </Button>
           </div>
-          <h3>Inventory List</h3>
+          <h3>Product List</h3>
           <Table className="mt-4">
             <thead>
               <tr>
-                <th width="20%">Book Name</th>
-                <th width="15%">Author</th>
+                <th width="20%">Product Name</th>
+                <th width="15%">Price</th>
                 <th width="15%">Actions</th>
               </tr>
             </thead>

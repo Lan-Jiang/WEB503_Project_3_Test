@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import AppNavbar from "./Navbar";
-import { Link, withRouter } from "react-router-dom";
+import Navbar from "./navbar";
+import { Link, withRouter, useHistory } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+// import "./App.css";
 
 class BookEdit extends Component {
   emptyBook = {
@@ -54,17 +54,16 @@ class BookEdit extends Component {
   render() {
     const { item } = this.state;
     const title = (
-      <h2 className="mt-3">{item._id ? "Edit Book" : "Add Book"}</h2>
+      <h2 className="mt-5">{item._id ? "Edit Product" : "Add Product"}</h2>
     );
     return (
       <div>
-        <AppNavbar />
         <Container>
           {title}
           <Form onSubmit={this.handleSubmit}>
             <FormGroup>
               <Label for="title" className="h5 mt-3">
-                Book Name
+                Product Name
               </Label>
               <Input
                 type="text"
@@ -77,7 +76,7 @@ class BookEdit extends Component {
             </FormGroup>
             <FormGroup>
               <Label for="author" className="h5 mt-3">
-                Author
+                Price
               </Label>
               <Input
                 type="text"
@@ -89,7 +88,7 @@ class BookEdit extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Button color="primary" type="submit" className="mt-3">
+              <Button color="warning" type="submit" className="mt-3">
                 Save
               </Button>{" "}
               <Button color="secondary" className="mt-3" tag={Link} to="/books">
